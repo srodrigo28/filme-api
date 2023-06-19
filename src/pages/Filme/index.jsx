@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import api from '../../services/api'
-import 'filme.css'
+import './filme.css'
 
 export function Filme() {
     const { id } = useParams()
@@ -25,7 +25,6 @@ export function Filme() {
                 console.log('filme não carregou')
             })
         }
-
         loadFilme();
 
         return() => {
@@ -44,12 +43,23 @@ export function Filme() {
     return (
         <div className='filme-info'>
             <h1>{filme.title}</h1>
+            
             <img src={`https://image.tmdb.org/t/p/original/${filme.backdrop_path}`} alt={filme.title} />
 
             <h3>Sinope</h3>
+            
             <span>{filme.overview}</span>
 
             <strong>Avaliação: {filme.vote_average} / 10 </strong>
+
+            <div className="area-buttons">
+                <button>Salvar</button>
+                <button>
+                    <a href="#">
+                        Trailer
+                    </a>
+                </button>
+            </div>
         </div>
     )
 }
