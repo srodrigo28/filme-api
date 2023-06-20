@@ -28,6 +28,7 @@ https://www.themoviedb.org/
 
 * Tecnlogias abordadas
 * React router-dom v6.0.2
+* npm i react-toastify
 * ReactJS
 * Axios
 * Express
