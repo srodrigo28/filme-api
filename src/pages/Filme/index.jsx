@@ -6,10 +6,13 @@ import './filme.css'
 
 export function Filme() {
     const { id } = useParams()
-    const navigate = useNavigate()
     const [filme, setFilme] = useState(true)
     const [loading, setLoading] = useState(true)
     
+    const navigate = useNavigate()
+
+    const handleClick = () => navigate('/');
+
     function salvarFilme(){
        const minhaLista = localStorage.getItem("@primeflix")
        let filmesSalvos = JSON.parse(minhaLista) || []
@@ -23,7 +26,10 @@ export function Filme() {
         }
         filmesSalvos.push(filme)
         localStorage.setItem("@primeflix", JSON.stringify(filmesSalvos))
+
         toast.success("Filme Salvo com sucesso!")
+
+        handleClick()
     }
 
     useEffect(() => {
