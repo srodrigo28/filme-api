@@ -11,7 +11,7 @@ export function Filme() {
     
     const navigate = useNavigate()
 
-    const handleClick = () => navigate('/');
+    const handleRedirect = () => navigate('/');
 
     function salvarFilme(){
        const minhaLista = localStorage.getItem("@primeflix")
@@ -29,7 +29,7 @@ export function Filme() {
 
         toast.success("Filme Salvo com sucesso!")
 
-        handleClick()
+        handleRedirect()
     }
 
     useEffect(() => {
